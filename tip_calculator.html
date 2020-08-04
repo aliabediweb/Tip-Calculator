@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+		
+<head>
+	
+	<meta charset="utf-8">
+	<title>Tip Calculator</title>
+	
+</head>
+
+<body>
+	
+	<h1>Tip Calculator</h1>
+	
+	<form action="/action_page.php">
+	  	<label for="user_total">TOTAL AMOUNT - $</label>
+	  	<input type="number" id="user_total" min="0"><br><br>
+	  	<label for="user_tip">TIP AMOUNT - %</label>
+	  	<input type="number" id="user_tip" min="0" max="100"><br><br>
+	</form>
+	
+	<button onClick="tip_calc()">CALCULATE TIP</button>
+	
+	<h2>TOTAL WITH <span id="tip_percent">N/A</span>% TIP: $<span id="total_with_tip"></span></h2>
+	<h4>TOTAL AMOUNT BEFORE TIP: $<span id="total_before_tip">N/A</span></h4>
+	<h4>TIP AMOUNT: $<span id="tip_amount">N/A</span></h4>
+
+	
+	<script>
+		
+		
+		
+		function tip_calc() {
+			
+			var user_total_node = document.getElementById("user_total");
+			var user_tip_node = document.getElementById("user_tip");
+
+			var tip_percent_node = document.getElementById("tip_percent");
+			var total_with_tip_node = document.getElementById("total_with_tip");
+			var total_before_tip_node = document.getElementById("total_before_tip");
+			var tip_amount_node = document.getElementById("tip_amount");
+			
+			user_total_string = user_total_node.value;
+			user_total_number = Number(user_total_string);
+			
+			user_tip_string = user_tip_node.value;
+			user_tip_number = Number(user_tip_string) / 100;
+			
+			if (user_total_number && user_tip_number && user_total_number>0 && user_tip_number>0 && user_tip_number<=1) {
+				
+				var tip_amount_value = user_total_number * user_tip_number;
+			
+				tip_percent_node.innerHTML = user_tip_number * 100;
+				total_with_tip_node.innerHTML = user_total_number + tip_amount_value;
+				total_before_tip_node.innerHTML = user_total_number;
+				tip_amount_node.innerHTML = tip_amount_value;
+			} else {
+				console.log("e")
+			}
+			
+
+		}
+		
+		
+	</script>
+	
+</body>
+	
+</html>
