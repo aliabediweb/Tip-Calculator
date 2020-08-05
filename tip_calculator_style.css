@@ -6,7 +6,7 @@ html {
 }
 
 body {
-	width: 30%;
+	width: 40%;
 	color: white;
 	background-color: darkcyan;
 	margin: 30px auto;
@@ -50,4 +50,12 @@ label {
 	font-size: 1.3em;
 }
 
+@media screen and (max-width: 800px) {
+	body {
+		width: 80%;
+	}
+}
 
+
+
+/* ------------ Copyright © Ali Abedi [August 2020] ------------ */
