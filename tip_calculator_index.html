@@ -16,14 +16,14 @@
 	
 	<form action="/action_page.php">
 	  	<label class="label" for="user_total">TOTAL AMOUNT - $</label>
-	  	<input class="input" type="number" id="user_total" min="0" max="10"><br><br>
+	  	<input class="input" type="number" id="user_total" min="0" max="1000000"><br><br>
 	  	<label class="label" for="user_tip">TIP AMOUNT - %</label>
 	  	<input class="input" type="number" id="user_tip" min="0" max="100"><br><br>
 	</form>
 	
 	<button onClick="tip_calc()">CALCULATE TIP</button>
 	
-	<h2 class="results">TOTAL WITH <span id="tip_percent">N/A</span>% TIP: $<span id="total_with_tip"></span></h2>
+	<h2 id="total_with_tip_result" class="results">TOTAL WITH <span id="tip_percent">N/A</span>% TIP: $<span id="total_with_tip"></span></h2>
 	<h4 class="results">TOTAL BEFORE TIP: $<span id="total_before_tip">N/A</span></h4>
 	<h4 class="results">TIP AMOUNT: $<span id="tip_amount">N/A</span></h4>
 
@@ -64,7 +64,9 @@
 				results_node3.style.display = "block";
 				
 			} else {
+
 				alert("INVALID INPUT | PLEASE TRY AGAIN");
+				
 			}
 		
 		}
